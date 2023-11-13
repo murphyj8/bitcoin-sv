@@ -3,7 +3,7 @@
 // LICENSE
 
 #pragma once
-
+#include <ios>
 #include <cstddef>
 #include <span>
 #include <utility>

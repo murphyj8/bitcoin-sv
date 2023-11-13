@@ -42,7 +42,7 @@ std::pair<size_t, size_t> tx_parser::parse_input(span<const uint8_t> s)
         s = s.subspan(total_bytes_read);
     }
 
-    const size_t extra_bytes_reqd{min(script_len_.value(),
+    const size_t extra_bytes_reqd{min((size_t)script_len_.value(),
                                       numeric_limits<size_t>::max() - seq_len) + seq_len};
     if(s.size() < extra_bytes_reqd)
         return make_pair(total_bytes_read, extra_bytes_reqd);

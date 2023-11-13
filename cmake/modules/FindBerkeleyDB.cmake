@@ -9,7 +9,7 @@ find_brew_prefix(BREW_HINT berkeley-db)
 find_path(BDBXX_INCLUDE_DIR
 	NAMES
 		db_cxx.h
-	HINTS ${BREW_HINT}
+	HINTS ${BREW_HINT}/include
 )
 if (MSVC)
 	# MSVC and VCPKG package manager use versioned library name
@@ -18,7 +18,7 @@ else()
 	find_library(BDBXX_LIBRARY
 		NAMES
 			db_cxx libdb_cxx
-		HINTS ${BREW_HINT}
+		HINTS ${BREW_HINT}/lib
 )
 endif()
 
