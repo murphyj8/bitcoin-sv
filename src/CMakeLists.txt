@@ -162,6 +162,7 @@ if(ENABLE_PROD_BUILD)
     target_compile_definitions(util PUBLIC IS_PRODUCTION_BUILD)
 endif()
 target_compile_definitions(util PUBLIC HAVE_CONFIG_H)
+target_compile_definitions(util PUBLIC _LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION)
 target_include_directories(util
 	PUBLIC
 		.
