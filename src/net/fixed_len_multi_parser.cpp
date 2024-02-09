@@ -70,7 +70,7 @@ std::pair<size_t, size_t> fixed_len_multi_parser::operator()(span<const uint8_t>
         const auto bytes_reqd{ n_fixed_lens * fixed_len_ };
 
         const size_t seg_bytes_reqd{seg_size_ - buffer_.size()};
-        const size_t min_bytes_reqd{min(seg_bytes_reqd, bytes_reqd)};
+        const size_t min_bytes_reqd{min((size_t)seg_bytes_reqd, (size_t)bytes_reqd)};
         const size_t n_bytes{min(s.size(), min_bytes_reqd)};
         const size_t quotient{(n_bytes / fixed_len_) * fixed_len_};
         buffer_.insert(buffer_.cend(), 
